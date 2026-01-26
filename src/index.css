@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 20%;
+
+    /* Navy Blue - Primary */
+    --primary: 220 45% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light gray for secondary */
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 45% 20%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Premium Gold - Accent */
+    --accent: 30 45% 65%;
+    --accent-foreground: 220 45% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 30 45% 65%;
+
+    --radius: 0.5rem;
+
+    /* Custom colors for the brand */
+    --gold: 30 45% 65%;
+    --gold-light: 30 50% 75%;
+    --gold-dark: 30 40% 50%;
+    --navy: 220 45% 20%;
+    --navy-light: 220 35% 35%;
+    --navy-dark: 220 50% 12%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 50% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 50% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 50% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 30 45% 65%;
+    --primary-foreground: 220 45% 10%;
+
+    --secondary: 220 40% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 40% 18%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 30 45% 65%;
+    --accent-foreground: 220 45% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 30 45% 65%;
+
+    --gold: 30 45% 65%;
+    --gold-light: 30 50% 75%;
+    --gold-dark: 30 40% 50%;
+    --navy: 220 45% 20%;
+    --navy-light: 220 35% 35%;
+    --navy-dark: 220 50% 12%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Ensure non-interactive elements don't have pointer cursor */
+  h1, h2, h3, h4, h5, h6, p, span, div, section, article, header, footer, main {
+    cursor: default;
+  }
+
+  /* Ensure interactive elements have pointer cursor */
+  a, button, [role="button"], input, select, textarea, label[for] {
+    cursor: pointer;
+  }
+
+  input, textarea {
+    cursor: text;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))] bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-gold {
+    @apply bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))];
+  }
+
+  .bg-gradient-navy {
+    @apply bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--navy-dark))];
+  }
+
+  /* Champagne/Gold Off-White Hero Gradient */
+  .bg-hero-champagne {
+    background: 
+      radial-gradient(ellipse at 30% 20%, hsl(35 30% 92% / 0.8) 0px, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, hsl(30 40% 88% / 0.6) 0px, transparent 45%),
+      radial-gradient(ellipse at 90% 10%, hsl(var(--gold-light) / 0.3) 0px, transparent 40%),
+      radial-gradient(ellipse at 10% 90%, hsl(var(--navy-light) / 0.08) 0px, transparent 50%),
+      linear-gradient(135deg, hsl(35 25% 96%) 0%, hsl(30 20% 94%) 50%, hsl(35 30% 92%) 100%);
+  }
+
+  /* Grain/Noise Texture Overlay */
+  .grain-texture {
+    position: relative;
+  }
+  
+  .grain-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Geometric Blueprint Lines */
+  .blueprint-lines {
+    position: relative;
+  }
+  
+  .blueprint-lines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(90deg, hsl(var(--navy) / 0.03) 1px, transparent 1px),
+      linear-gradient(hsl(var(--navy) / 0.03) 1px, transparent 1px),
+      linear-gradient(45deg, hsl(var(--gold) / 0.02) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 120px 120px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Mesh Gradient Backgrounds */
+  .bg-mesh-gradient {
+    background: 
+      radial-gradient(at 40% 20%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--navy-light) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--gold-light) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(var(--navy) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(var(--gold) / 0.1) 0px, transparent 50%),
+      hsl(var(--background));
+  }
+
+  .bg-mesh-gradient-dark {
+    background: 
+      radial-gradient(ellipse at 20% 20%, hsl(var(--navy-light) / 0.4) 0px, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(var(--navy) / 0.95) 0px, transparent 80%),
+      linear-gradient(135deg, hsl(220 50% 12%) 0%, hsl(220 50% 8%) 100%);
+  }
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    @apply backdrop-blur-xl border shadow-xl;
+    background: hsl(var(--navy-light) / 0.3);
+    border-color: hsl(0 0% 100% / 0.15);
+  }
+
+  .glass-card-premium {
+    @apply backdrop-blur-2xl border shadow-2xl;
+    background: hsl(0 0% 100% / 0.85);
+    border-color: hsl(0 0% 100% / 0.4);
+    box-shadow: 
+      0 8px 40px hsl(var(--navy) / 0.1),
+      0 2px 12px hsl(var(--gold) / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.5);
+  }
+
+  .glass-card-premium:hover {
+    box-shadow: 
+      0 12px 50px hsl(var(--gold) / 0.2),
+      0 4px 20px hsl(var(--navy) / 0.15),
+      inset 0 1px 0 hsl(0 0% 100% / 0.6);
+    border-color: hsl(var(--gold) / 0.3);
+  }
+
+  .glass-card-accent {
+    @apply backdrop-blur-xl border;
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(0 0% 100% / 0.7) 100%);
+    border-color: hsl(0 0% 100% / 0.4);
+    box-shadow: 
+      0 8px 32px hsl(var(--gold) / 0.15),
+      inset 0 1px 0 hsl(0 0% 100% / 0.4);
+  }
+
+  /* Dark glassmorphism for navy sections */
+  .glass-card-dark {
+    @apply backdrop-blur-xl border;
+    background: hsl(var(--navy-light) / 0.4);
+    border-color: hsl(0 0% 100% / 0.1);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
+  .glass-card-dark-accent {
+    @apply backdrop-blur-xl border relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--navy-light) / 0.5) 0%, hsl(var(--gold) / 0.1) 100%);
+    border-color: hsl(var(--gold) / 0.3);
+    box-shadow: 
+      0 8px 32px hsl(var(--gold) / 0.2),
+      inset 0 1px 0 hsl(var(--gold) / 0.2);
+  }
+
+  /* Animated border beam effect */
+  .border-beam {
+    position: relative;
+  }
+  
+  .border-beam::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold-light)) 25%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 75%,
+      hsl(var(--gold-dark)) 100%
+    );
+    background-size: 200% 100%;
+    animation: borderBeam 3s linear infinite;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 0;
+  }
+
+  @keyframes borderBeam {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Glow shadows */
+  .shadow-gold-glow {
+    box-shadow: 
+      0 0 20px hsl(var(--gold) / 0.4),
+      0 0 40px hsl(var(--gold) / 0.2),
+      0 8px 32px hsl(var(--gold) / 0.3);
+  }
+
+  .shadow-navy-glow {
+    box-shadow: 
+      0 0 20px hsl(var(--navy) / 0.3),
+      0 0 40px hsl(var(--navy-light) / 0.2),
+      0 8px 32px hsl(var(--navy) / 0.2);
+  }
+
+  /* Premium text styling for OdontoAgent */
+  .text-odontoagent {
+    @apply font-bold bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))] bg-clip-text text-transparent;
+    filter: drop-shadow(0 0 12px hsl(var(--gold) / 0.4));
+  }
+
+  /* Float animation for scroll effects */
+  .float-in {
+    animation: floatIn 0.8s ease-out forwards;
+  }
+
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
