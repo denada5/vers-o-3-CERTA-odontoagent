@@ -111,9 +111,20 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* FORÇA O LIGHT MODE - ignora preferências do sistema */
+  :root {
+    color-scheme: light only;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: hsl(0 0% 100%);
+    color: hsl(220 30% 20%);
   }
 
   /* Ensure non-interactive elements don't have pointer cursor */

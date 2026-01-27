@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20agendar%20um%20diagnóstico%20para%20minha%20clínica.";
@@ -25,7 +25,8 @@ export function CTASection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-5 py-2.5 mb-6 text-sm font-semibold glass-card-premium text-primary rounded-full border border-gold/20">
-              IA + Automação para Clínicas
+              <Sparkles className="inline mr-2" size={16} />
+              Pronto para transformar sua clínica?
             </span>
           </motion.div>
 
@@ -35,8 +36,8 @@ export function CTASection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-navy-dark leading-tight mb-6"
           >
-            Sua clínica não pode esperar.{" "}
-            <span className="text-odontoagent">Seus pacientes também não.</span>
+            Vamos conversar sobre o{" "}
+            <span className="text-odontoagent">futuro da sua clínica?</span>
           </motion.h2>
 
           <motion.p
@@ -45,7 +46,7 @@ export function CTASection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg lg:text-xl text-navy/70 max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            Elimine a perda de leads e proteja seu faturamento com uma IA que responde instantaneamente, qualifica pacientes e agenda consultas 24/7. O suporte que sua equipe precisa para nunca mais perder um agendamento por demora no WhatsApp.
+            Agende uma demonstração gratuita e descubra como o OdontoAgent pode aumentar seus agendamentos, reduzir faltas e liberar sua equipe para o que realmente importa: cuidar dos pacientes.
           </motion.p>
 
           <motion.div
@@ -61,7 +62,7 @@ export function CTASection() {
             >
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2" size={20} />
-                Agendar uma Demonstração
+                Falar com a Deborah
               </a>
             </Button>
             <Button
@@ -70,8 +71,8 @@ export function CTASection() {
               size="lg"
               className="border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold text-base px-8 py-6 transition-all duration-300"
             >
-              <Link to="/detalhes">
-                Ver Detalhes
+              <Link to="/planos">
+                Ver Planos e Preços
                 <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>

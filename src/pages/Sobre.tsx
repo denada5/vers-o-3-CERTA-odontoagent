@@ -82,7 +82,7 @@ const Sobre = () => {
                     <img
                       src={deborahPhoto}
                       alt="Deborah Alves - Especialista em IA e Automação para Clínicas"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-[center_20%]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/30 via-transparent to-transparent" />
                   </div>
@@ -168,7 +168,7 @@ const Sobre = () => {
               </p>
 
               <p className="text-base lg:text-lg text-navy/80 leading-relaxed mb-6">
-                Trago comigo anos de experiência em automação de processos, arquitetura de dados e ferramentas de inteligência artificial — de agentes com GPT e Claude até orquestradores como n8n. Mas mais do que dominar a técnica, <strong className="text-navy">eu entendo a dor</strong>. Já vivi ela.
+                Tenho experiência prática em automação de processos, arquitetura de dados e ferramentas de inteligência artificial, incluindo agentes com GPT e Claude, além de orquestradores como n8n. Conheço o fluxo de trabalho de clínicas odontológicas e sei exatamente como adaptar a tecnologia à rotina real do consultório. Mas mais do que dominar a técnica, <strong className="text-navy">eu entendo a dor</strong>. Já vivi ela.
               </p>
 
               <p className="text-base lg:text-lg text-navy/80 leading-relaxed mb-6">

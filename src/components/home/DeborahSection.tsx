@@ -48,10 +48,10 @@ export function DeborahSection() {
                   Eu não apenas vendo um sistema — eu <strong className="text-white">desenho, implemento, integro e otimizo</strong> cada OdontoAgent de acordo com a realidade da sua clínica.
                 </p>
                 <p>
-                  Trago anos de experiência em automação de processos, arquitetura de dados e ferramentas de IA. Mas mais do que dominar a técnica, <strong className="text-gold">eu entendo a dor</strong>. Já fui a paciente procurando dentista de madrugada e fechando com quem respondeu primeiro.
+                  Tenho experiência prática em automação de processos, arquitetura de dados e ferramentas de IA. Conheço o fluxo de trabalho de clínicas e sei adaptar a tecnologia à rotina real. Mas mais do que dominar a técnica, <strong className="text-gold">eu entendo a dor</strong>. Já fui a paciente procurando dentista de madrugada e fechando com quem respondeu primeiro.
                 </p>
                 <p>
-                  Por isso, cada clínica que eu atendo recebe <strong className="text-white">atenção personalizada</strong> — das que estão começando às que já são referência no mercado.
+                  Por isso, cada clínica que eu atendo recebe <strong className="text-white">atenção personalizada</strong>.
                 </p>
               </div>
 
@@ -85,7 +85,7 @@ export function DeborahSection() {
                   <img
                     src={deborahPhoto}
                     alt="Deborah Alves - Especialista em IA e Automação para Clínicas"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-[center_20%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 via-transparent to-transparent" />
                 </div>

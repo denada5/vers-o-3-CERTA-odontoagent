@@ -78,7 +78,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Localização</h4>
             <div className="flex items-start gap-2 text-primary-foreground/80 text-sm">
               <MapPin size={18} className="text-accent flex-shrink-0 mt-0.5" />
-              <span>Base em São Paulo, atendimento global para todas as localidades.</span>
+              <span>Base em São Paulo. Atendimento online para todas as localidades.</span>
             </div>
           </div>
         </div>

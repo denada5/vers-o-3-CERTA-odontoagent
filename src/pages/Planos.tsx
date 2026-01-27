@@ -7,54 +7,75 @@ import {
   Check, 
   X,
   Sparkles, 
-  Clock, 
-  Brain, 
-  CalendarCheck,
-  Filter,
-  Puzzle,
+  User,
+  Building2,
+  ArrowRight,
+  Send,
+  UserCheck,
+  Calendar,
+  Bell,
+  Database,
+  Workflow,
   BarChart3,
-  Heart,
-  Settings
+  Zap
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20do%20OdontoAgent.";
 
-// Cards "O que seu paciente vive"
-const patientCards = [
+// Passo a passo do PACIENTE
+const patientSteps = [
   {
-    icon: Clock,
-    title: "Resposta imediata",
-    description: "O paciente manda mensagem a qualquer hora — madrugada, domingo, feriado. A Laura responde na hora, com naturalidade.",
+    step: "1",
+    icon: Send,
+    title: "Paciente envia mensagem",
+    description: "A qualquer hora, dia ou noite. A IA responde em segundos com linguagem natural e acolhedora.",
   },
   {
-    icon: Brain,
-    title: "Conversa que entende",
-    description: "Nada de bots que ignoram a pergunta. A IA compreende o contexto, tira dúvidas e conduz a conversa sem atrito.",
+    step: "2",
+    icon: MessageCircle,
+    title: "Conversa inteligente",
+    description: "Tira dúvidas sobre procedimentos, valores e disponibilidade. Coleta nome, telefone e interesse naturalmente.",
   },
   {
-    icon: CalendarCheck,
-    title: "Agendamento sem esforço",
-    description: "O paciente escolhe o horário, confirma a consulta e recebe lembrete. Tudo dentro do WhatsApp.",
+    step: "3",
+    icon: UserCheck,
+    title: "Qualificação automática",
+    description: "Identifica urgência e tipo de tratamento. Encaminha corretamente para avaliação ou agendamento direto.",
+  },
+  {
+    step: "4",
+    icon: Calendar,
+    title: "Agendamento confirmado",
+    description: "Oferece horários disponíveis, confirma a consulta e envia lembrete automático antes do dia.",
   },
 ];
 
-// Cards "O que sua clínica ganha"
-const clinicCards = [
+// Passo a passo da CLÍNICA (bastidores)
+const clinicSteps = [
   {
-    icon: Filter,
-    title: "Qualificação inteligente",
-    description: "A IA identifica urgência, interesse e perfil — priorizando quem está pronto para fechar.",
+    step: "1",
+    icon: Database,
+    title: "Banco de dados estruturado",
+    description: "Cada interação é armazenada: histórico de conversas, preferências, origem do lead, perfil do paciente.",
   },
   {
-    icon: Puzzle,
-    title: "Integração total",
-    description: "Conecta com sua agenda, CRM e ferramentas existentes. A rotina da secretária não muda, só melhora.",
+    step: "2",
+    icon: Workflow,
+    title: "Orquestrador lógico",
+    description: "Um sistema construído com n8n conecta WhatsApp, agenda, CRM e notificações. Tudo funciona integrado.",
   },
   {
+    step: "3",
+    icon: Bell,
+    title: "Alertas internos",
+    description: "Doutor e secretária recebem notificações de novos agendamentos, urgências ou quando precisam assumir a conversa.",
+  },
+  {
+    step: "4",
     icon: BarChart3,
-    title: "Dados em tempo real",
-    description: "Métricas de atendimento, origem de leads, taxa de conversão. Você decide com clareza, não com achismo.",
+    title: "Métricas e relatórios",
+    description: "Dashboard com taxa de conversão, origem de leads, tempo de resposta. Decisões baseadas em dados reais.",
   },
 ];
 
@@ -225,13 +246,13 @@ const Planos = () => {
               <span className="text-odontoagent">plano ideal</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Veja como funciona o atendimento automatizado e encontre a solução perfeita para o momento da sua clínica.
+              Veja o passo a passo de como funciona e encontre a solução perfeita para o momento da sua clínica.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SEÇÃO: COMO FUNCIONA */}
+      {/* SEÇÃO: COMO FUNCIONA - REFORMULADA */}
       <section className="py-16 lg:py-24 bg-hero-champagne grain-texture" ref={howItWorksRef}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -242,7 +263,7 @@ const Planos = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-2 mb-6 text-sm font-medium glass-card-premium text-primary rounded-full border border-gold/20">
-                Como Funciona
+                Como Funciona na Prática
               </span>
             </motion.div>
 
@@ -252,8 +273,8 @@ const Planos = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-dark mb-4"
             >
-              Atendimento que converte —{" "}
-              <span className="text-odontoagent">nos bastidores e na ponta.</span>
+              O passo a passo do{" "}
+              <span className="text-odontoagent">atendimento inteligente</span>
             </motion.h2>
 
             <motion.p
@@ -262,36 +283,48 @@ const Planos = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base lg:text-lg text-navy/70"
             >
-              Enquanto seu paciente tem a melhor experiência, sua clínica ganha inteligência para crescer.
+              Veja exatamente o que acontece quando um paciente entra em contato e como sua clínica ganha eficiência nos bastidores.
             </motion.p>
           </div>
 
-          {/* Bloco 1: O que seu paciente vive */}
+          {/* Bloco 1: Jornada do PACIENTE */}
           <div className="max-w-5xl mx-auto mb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex items-center justify-center gap-2 mb-8"
+              className="flex items-center justify-center gap-3 mb-10"
             >
-              <Heart className="w-5 h-5 text-accent" />
-              <span className="text-lg font-semibold text-navy-dark">O que seu paciente vive</span>
+              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+                <User className="w-5 h-5 text-accent" />
+              </div>
+              <span className="text-xl font-bold text-navy-dark">Jornada do Paciente</span>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {patientCards.map((card, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {patientSteps.map((item, index) => (
                 <motion.div
-                  key={card.title}
+                  key={item.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="glass-card-premium rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300"
+                  className="relative"
                 >
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <card.icon className="w-6 h-6 text-accent" />
+                  {/* Linha conectora */}
+                  {index < patientSteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-8 left-full w-6 h-0.5 bg-gradient-to-r from-accent/50 to-accent/20 z-0" />
+                  )}
+                  
+                  <div className="glass-card-premium rounded-2xl p-6 h-full hover:scale-105 transition-transform duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">
+                        {item.step}
+                      </span>
+                      <item.icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <h3 className="text-base font-bold text-navy-dark mb-2">{item.title}</h3>
+                    <p className="text-sm text-navy/70 leading-relaxed">{item.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-navy-dark mb-2">{card.title}</h3>
-                  <p className="text-sm text-navy/70 leading-relaxed">{card.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -299,50 +332,77 @@ const Planos = () => {
 
           {/* Separador */}
           <div className="max-w-2xl mx-auto mb-16">
-            <div className="h-px bg-gradient-to-r from-transparent via-navy/20 to-transparent" />
+            <div className="flex items-center gap-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-navy/20 to-transparent" />
+              <Zap className="w-6 h-6 text-accent" />
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-navy/20 to-transparent" />
+            </div>
           </div>
 
-          {/* Bloco 2: O que sua clínica ganha */}
+          {/* Bloco 2: Bastidores da CLÍNICA */}
           <div className="max-w-5xl mx-auto mb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex items-center justify-center gap-2 mb-8"
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex items-center justify-center gap-3 mb-10"
             >
-              <Settings className="w-5 h-5 text-accent" />
-              <span className="text-lg font-semibold text-navy-dark">O que sua clínica ganha</span>
+              <div className="w-10 h-10 rounded-full bg-navy/20 flex items-center justify-center">
+                <Building2 className="w-5 h-5 text-navy" />
+              </div>
+              <span className="text-xl font-bold text-navy-dark">Bastidores da Clínica</span>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {clinicCards.map((card, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {clinicSteps.map((item, index) => (
                 <motion.div
-                  key={card.title}
+                  key={item.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  className="glass-card-premium rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border border-navy/10"
+                  transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                  className="relative"
                 >
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-navy/10 flex items-center justify-center">
-                    <card.icon className="w-6 h-6 text-navy" />
+                  {/* Linha conectora */}
+                  {index < clinicSteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-8 left-full w-6 h-0.5 bg-gradient-to-r from-navy/30 to-navy/10 z-0" />
+                  )}
+                  
+                  <div className="glass-card-premium rounded-2xl p-6 h-full border border-navy/10 hover:scale-105 transition-transform duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center text-sm font-bold">
+                        {item.step}
+                      </span>
+                      <item.icon className="w-5 h-5 text-navy" />
+                    </div>
+                    <h3 className="text-base font-bold text-navy-dark mb-2">{item.title}</h3>
+                    <p className="text-sm text-navy/70 leading-relaxed">{item.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-navy-dark mb-2">{card.title}</h3>
-                  <p className="text-sm text-navy/70 leading-relaxed">{card.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Frase de transição */}
-          <motion.p
+          {/* CTA após Como Funciona */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            className="text-center text-lg lg:text-xl text-navy/80 italic max-w-2xl mx-auto"
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="text-center"
           >
-            Agora escolha o nível de automação ideal para o momento da{" "}
-            <span className="text-odontoagent font-semibold not-italic">sua clínica</span>.
-          </motion.p>
+            <p className="text-lg text-navy/70 mb-6">
+              Quer ver isso funcionando na prática?
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+            >
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2" size={20} />
+                Agendar Demonstração
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
