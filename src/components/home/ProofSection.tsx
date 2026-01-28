@@ -83,7 +83,7 @@ export function ProofSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center text-base lg:text-lg text-navy/70 max-w-2xl mx-auto mb-10"
         >
-          O <span className="text-odontoagent font-semibold">OdontoAgent</span> garante que sua clínica esteja sempre pronta — mesmo quando você não está.
+          O <span className="text-odontoagent font-semibold">OdontoAgent</span> garante que sua clínica esteja sempre pronta, mesmo quando você não está.
         </motion.p>
 
         {/* CTA */}

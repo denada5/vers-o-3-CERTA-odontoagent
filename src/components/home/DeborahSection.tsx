@@ -45,7 +45,7 @@ export function DeborahSection() {
 
               <div className="space-y-4 text-white/70 leading-relaxed">
                 <p>
-                  Eu não apenas vendo um sistema — eu <strong className="text-white">desenho, implemento, integro e otimizo</strong> cada OdontoAgent de acordo com a realidade da sua clínica.
+                  Eu não apenas vendo um sistema. Eu <strong className="text-white">desenho, implemento, integro e otimizo</strong> cada OdontoAgent de acordo com a realidade da sua clínica.
                 </p>
                 <p>
                   Tenho experiência prática em automação de processos, arquitetura de dados e ferramentas de IA. Conheço o fluxo de trabalho de clínicas e sei adaptar a tecnologia à rotina real. Mas mais do que dominar a técnica, <strong className="text-gold">eu entendo a dor</strong>. Já fui a paciente procurando dentista de madrugada e fechando com quem respondeu primeiro.
@@ -85,7 +85,7 @@ export function DeborahSection() {
                   <img
                     src={deborahPhoto}
                     alt="Deborah Alves - Especialista em IA e Automação para Clínicas"
-                    className="w-full h-full object-cover object-[center_15%]"
+                    className="w-full h-full object-cover object-[center_10%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 via-transparent to-transparent" />
                 </div>

@@ -5,12 +5,12 @@ const differentials = [
   {
     icon: Brain,
     title: "IA com Memória de Contexto",
-    description: "A IA lembra das conversas anteriores. Se o paciente volta depois de dias, ela retoma de onde parou — sem perguntar tudo de novo.",
+    description: "A IA lembra das conversas anteriores. Se o paciente volta depois de dias, ela retoma de onde parou, sem perguntar tudo de novo.",
   },
   {
     icon: ArrowRightLeft,
     title: "Handoff Inteligente",
-    description: "Transição suave entre IA e humano. O doutor ou secretária assume quando quiser, e a IA volta automaticamente depois — com todo o contexto preservado.",
+    description: "Transição suave entre IA e humano. O doutor ou secretária assume quando quiser, e a IA volta automaticamente depois, com todo o contexto preservado.",
   },
   {
     icon: Palette,
@@ -25,7 +25,7 @@ const differentials = [
   {
     icon: Sparkles,
     title: "Evolução Contínua",
-    description: "O sistema é atualizado constantemente. Novas funcionalidades, melhorias de IA, otimizações — sua clínica sempre com tecnologia de ponta.",
+    description: "O sistema é atualizado constantemente. Novas funcionalidades, melhorias de IA e otimizações para sua clínica sempre com tecnologia de ponta.",
   },
   {
     icon: Headphones,
@@ -35,7 +35,7 @@ const differentials = [
   {
     icon: RefreshCw,
     title: "Acompanhamento Contínuo",
-    description: "Serviço de manutenção de qualidade que mantém, melhora e certifica que tudo funcione do jeito certo — sem desespero.",
+    description: "Serviço de manutenção de qualidade que mantém, melhora e certifica que tudo funcione do jeito certo, sem desespero.",
   },
 ];
 

@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20agendar%20um%20diagnóstico%20para%20minha%20clínica.";
 
 export function HeroSection() {
   const scrollToOdontoAgent = () => {
@@ -50,7 +49,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg lg:text-xl text-navy/70 max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            Sou <strong className="text-navy">Deborah Alves</strong> — especialista em automação, dados e inteligência artificial para clínicas odontológicas. Criei o <span className="text-odontoagent font-semibold">OdontoAgent</span> para resolver um problema que eu mesma vivi como paciente: clínicas excelentes que perdem oportunidades por não responderem a tempo.
+            Sou <strong className="text-navy">Deborah Alves</strong>, especialista em automação, dados e inteligência artificial para clínicas odontológicas. Criei o <span className="text-odontoagent font-semibold">OdontoAgent</span> para resolver um problema que eu mesma vivi como paciente: clínicas excelentes que perdem oportunidades por não responderem a tempo.
           </motion.p>
 
           <motion.div
@@ -64,10 +63,10 @@ export function HeroSection() {
               size="lg"
               className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
             >
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <Link to="/contato#formulario">
                 <MessageCircle className="mr-2" size={20} />
                 Agendar uma Demonstração
-              </a>
+              </Link>
             </Button>
             <Button
               onClick={scrollToOdontoAgent}

@@ -35,7 +35,7 @@ export function DetalhesIntegracoes() {
             Integração Total com seu <span className="text-[hsl(var(--gold))]">Ecossistema</span>
           </h2>
           <p className="text-lg text-white/70 max-w-3xl mx-auto">
-            O OdontoAgent se conecta com as ferramentas que sua clínica já usa — sem exigir mudanças na rotina.
+            O OdontoAgent se conecta com as ferramentas que sua clínica já usa, sem exigir mudanças na rotina.
           </p>
         </motion.div>
 

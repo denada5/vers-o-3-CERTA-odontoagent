@@ -5,8 +5,6 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20agendar%20um%20diagnóstico%20para%20minha%20clínica.";
-
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/detalhes", label: "Detalhes" },
@@ -75,9 +73,9 @@ export function Navbar() {
               asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6"
             >
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <Link to="/contato#formulario">
                 Agende uma Demonstração
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -120,9 +118,9 @@ export function Navbar() {
                 asChild
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2"
               >
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/contato#formulario">
                   Agende uma Demonstração
-                </a>
+                </Link>
               </Button>
             </div>
           </motion.div>

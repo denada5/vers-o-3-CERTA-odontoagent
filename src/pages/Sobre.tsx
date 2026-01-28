@@ -84,7 +84,7 @@ const Sobre = () => {
                     <img
                       src={deborahPhoto}
                       alt="Deborah Alves - Especialista em IA e Automação para Clínicas"
-                      className="w-full h-full object-cover object-[center_15%]"
+                      className="w-full h-full object-cover object-[center_10%]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/30 via-transparent to-transparent" />
                   </div>

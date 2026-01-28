@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { MessageCircle, Send, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,19 @@ const Contato = () => {
     whatsapp: "",
     duvida_desafio: "",
   });
+  const location = useLocation();
+
+  // Scroll para o formulário se vier com hash #formulario
+  useEffect(() => {
+    if (location.hash === "#formulario") {
+      setTimeout(() => {
+        const element = document.getElementById("formulario");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,7 +95,7 @@ const Contato = () => {
       </section>
 
       {/* Form Section */}
-      <section className="py-16 lg:py-24 bg-mesh-gradient">
+      <section id="formulario" className="py-16 lg:py-24 bg-mesh-gradient scroll-mt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
             {/* Form */}
