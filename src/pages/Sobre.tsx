@@ -3,9 +3,11 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { Database, Brain, Zap, ArrowRight } from "lucide-react";
+import { Database, Brain, Zap, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import deborahPhoto from "@/assets/deborah-photo-new.jpeg";
+
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20conversar%20sobre%20o%20OdontoAgent.";
 
 const pillars = [
   {
@@ -82,7 +84,7 @@ const Sobre = () => {
                     <img
                       src={deborahPhoto}
                       alt="Deborah Alves - Especialista em IA e Automação para Clínicas"
-                      className="w-full h-full object-cover object-[center_20%]"
+                      className="w-full h-full object-cover object-[center_15%]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/30 via-transparent to-transparent" />
                   </div>
@@ -105,16 +107,35 @@ const Sobre = () => {
                 </p>
 
                 <p className="text-base lg:text-lg text-navy/80 leading-relaxed">
-                  Já perdi a conta de quantas vezes procurei dentistas — pra mim, pra pessoas próximas — e esbarrei sempre no mesmo problema: clínicas excelentes, profissionais incríveis, mas um WhatsApp que demorava dias pra responder. Ou pior: bots genéricos que ignoravam completamente o que eu perguntava.
+                  Já perdi a conta de quantas vezes procurei dentistas, pra mim, pra pessoas próximas, e esbarrei sempre no mesmo problema: clínicas excelentes, profissionais incríveis, mas um WhatsApp que demorava dias pra responder. Ou pior: bots genéricos que ignoravam completamente o que eu perguntava.
                 </p>
 
                 <p className="text-base lg:text-lg text-navy/80 leading-relaxed">
-                  Quando comecei meu tratamento com Invisalign, precisava de uma clínica que atendesse casos específicos. Mandei mensagem pra várias. Sabe qual fechou comigo? A única que me respondeu de forma rápida, clara e humanizada — <strong className="text-navy">de madrugada</strong>, quando finalmente consegui pesquisar. Era uma IA, e eu nem percebi de tão natural que foi.
+                  Quando comecei meu tratamento com Invisalign, precisava de uma clínica que atendesse casos específicos. Mandei mensagem pra várias. Sabe qual fechou comigo? A única que me respondeu de forma rápida, clara e humanizada, <strong className="text-navy">de madrugada</strong>, quando finalmente consegui pesquisar. Era uma IA, e eu nem percebi de tão natural que foi.
                 </p>
 
                 <p className="text-base lg:text-lg text-navy/80 leading-relaxed">
-                  Enquanto isso, as outras clínicas — algumas com ótimos profissionais — <strong className="text-navy">nunca nem chegaram a me atender</strong>.
+                  Enquanto isso, as outras clínicas, algumas com ótimos profissionais, <strong className="text-navy">nunca nem chegaram a me atender</strong>.
                 </p>
+
+                {/* CTA após história */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isStoryInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="pt-4"
+                >
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+                  >
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2" size={20} />
+                      Vamos conversar?
+                    </a>
+                  </Button>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -150,6 +171,25 @@ const Sobre = () => {
             >
               Pacientes desistem. Leads esfriam. Profissionais perdem oportunidades. Não por falta de competência, mas porque o WhatsApp da clínica não acompanha o ritmo da vida real.
             </motion.p>
+
+            {/* CTA após destaque */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isHighlightInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center mt-10"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+              >
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2" size={20} />
+                  Quero resolver isso na minha clínica
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -172,11 +212,11 @@ const Sobre = () => {
               </p>
 
               <p className="text-base lg:text-lg text-navy/80 leading-relaxed mb-6">
-                O OdontoAgent não é um chatbot qualquer. É um <strong className="text-navy">sistema completo de atendimento inteligente</strong> no WhatsApp: responde 24 horas, qualifica pacientes, agenda consultas, e se adapta à rotina única de cada clínica. Se a sua clínica faz tráfego pago, ele rastreia a origem. Se usa uma agenda específica, ele integra. Se precisa de handoff pro doutor ou secretária, ele transfere — e depois retoma, com todo o contexto preservado.
+                O OdontoAgent não é um chatbot qualquer. É um <strong className="text-navy">sistema completo de atendimento inteligente</strong> no WhatsApp: responde 24 horas, qualifica pacientes, agenda consultas, e se adapta à rotina única de cada clínica. Se a sua clínica faz tráfego pago, ele rastreia a origem. Se usa uma agenda específica, ele integra. Se precisa de handoff pro doutor ou secretária, ele transfere e depois retoma, com todo o contexto preservado.
               </p>
 
               <p className="text-base lg:text-lg text-navy/80 leading-relaxed">
-                E por trás de cada conversa, existe um <strong className="text-navy">banco de dados estruturado</strong> que transforma interações em inteligência: métricas de atendimento, análise de leads, comportamento de pacientes — tudo em tempo real.
+                E por trás de cada conversa, existe um <strong className="text-navy">banco de dados estruturado</strong> que transforma interações em inteligência: métricas de atendimento, análise de leads, comportamento de pacientes, tudo em tempo real.
               </p>
             </motion.div>
 
@@ -199,8 +239,27 @@ const Sobre = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center text-lg lg:text-xl italic text-odontoagent font-medium"
             >
-              Porque tecnologia boa é a que desaparece — e deixa só o resultado: mais pacientes atendidos, menos oportunidades perdidas, e doutores e secretárias com paz de espírito.
+              Porque tecnologia boa é a que desaparece e deixa só o resultado: mais pacientes atendidos, menos oportunidades perdidas, e doutores e secretárias com paz de espírito.
             </motion.p>
+
+            {/* CTA após solução */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isSolutionInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center pt-4"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+              >
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2" size={20} />
+                  Agendar diagnóstico gratuito
+                </a>
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>

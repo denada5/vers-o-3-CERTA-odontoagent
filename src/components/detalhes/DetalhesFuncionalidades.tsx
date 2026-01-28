@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { Calendar, Moon, Users, Heart, Check } from "lucide-react";
+import { Calendar, Moon, Users, Heart, Check, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20ver%20uma%20demonstração%20do%20OdontoAgent.";
 
 const features = [
   {
     icon: Calendar,
     badge: "AGENDAMENTO AUTÔNOMO",
     title: "Autonomia Total de Agendamento",
-    description: "A IA não apenas responde — ela agenda. Consulta horários disponíveis, oferece opções ao paciente, confirma a consulta e atualiza sua agenda automaticamente. Tudo isso integrado com Google Calendar, Clinicorp, Simples Dental e outros sistemas.",
+    description: "A IA não apenas responde, ela agenda. Consulta horários disponíveis, oferece opções ao paciente, confirma a consulta e atualiza sua agenda automaticamente. Tudo isso integrado com Google Calendar, Clinicorp, Simples Dental e outros sistemas.",
     bullets: [
       "Agendamento direto pelo WhatsApp",
       "Integração com agenda e CRM",
@@ -85,7 +88,7 @@ export function DetalhesFuncionalidades() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -129,6 +132,26 @@ export function DetalhesFuncionalidades() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+          >
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2" size={20} />
+              Ver demonstração ao vivo
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

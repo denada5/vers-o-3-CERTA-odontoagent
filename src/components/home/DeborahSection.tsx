@@ -85,7 +85,7 @@ export function DeborahSection() {
                   <img
                     src={deborahPhoto}
                     alt="Deborah Alves - Especialista em IA e Automação para Clínicas"
-                    className="w-full h-full object-cover object-[center_20%]"
+                    className="w-full h-full object-cover object-[center_15%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 via-transparent to-transparent" />
                 </div>

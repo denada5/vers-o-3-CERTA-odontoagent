@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Stethoscope, UserRound, Headset, Check } from "lucide-react";
+import { Stethoscope, UserRound, Headset, Check, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20quero%20saber%20mais%20sobre%20os%20benefícios%20do%20OdontoAgent.";
 
 const profiles = [
   {
@@ -9,9 +12,9 @@ const profiles = [
     icon: UserRound,
     label: "Para o Paciente",
     title: "Experiência que Fideliza",
-    intro: "O paciente sente a diferença desde o primeiro contato. Resposta rápida, conversa natural, agendamento sem fricção. Ele se sente acolhido, compreendido e valorizado — fortalecendo a imagem da clínica.",
+    intro: "O paciente sente a diferença desde o primeiro contato. Resposta rápida, conversa natural, agendamento sem fricção. Ele se sente acolhido, compreendido e valorizado, fortalecendo a imagem da clínica.",
     benefits: [
-      "Resposta imediata, sem espera — mesmo às 3h da manhã",
+      "Resposta imediata, sem espera, mesmo às 3h da manhã",
       "Conversa humanizada que entende o contexto e a necessidade",
       "Informações claras sobre tratamentos, valores e procedimentos",
       "Agendamento simples e direto pelo WhatsApp",
@@ -19,14 +22,14 @@ const profiles = [
       "Follow-up pós-consulta que mostra cuidado",
       "Privacidade garantida com conformidade LGPD",
     ],
-    impact: "Pacientes que se sentem bem atendidos voltam — e indicam.",
+    impact: "Pacientes que se sentem bem atendidos voltam e indicam.",
   },
   {
     id: "doutor",
     icon: Stethoscope,
     label: "Para o Doutor",
     title: "Clareza, Controle e Autonomia",
-    intro: "O doutor ganha um assistente digital pessoal que oferece visão completa da operação. Relatórios automáticos, métricas de performance, e controle total da agenda — tudo direto no WhatsApp, sem precisar de sistemas complexos.",
+    intro: "O doutor ganha um assistente digital pessoal que oferece visão completa da operação. Relatórios automáticos, métricas de performance, e controle total da agenda, tudo direto no WhatsApp, sem precisar de sistemas complexos.",
     benefits: [
       "Relatórios automáticos de atendimentos, consultas e conversão",
       "Cancelar, remarcar ou consultar agenda pelo WhatsApp",
@@ -34,7 +37,7 @@ const profiles = [
       "Alertas em tempo real sobre urgências e oportunidades",
       "Suporte a múltiplos doutores com agendas independentes",
       "Decisões baseadas em dados, não em achismo",
-      "Paz de espírito — a clínica funciona mesmo quando você não está olhando",
+      "Paz de espírito: a clínica funciona mesmo quando você não está olhando",
     ],
     impact: "Menos ansiedade, mais previsibilidade. Você no controle.",
   },
@@ -139,6 +142,26 @@ export function DetalhesBeneficios() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+          >
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2" size={20} />
+              Quero esses resultados
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

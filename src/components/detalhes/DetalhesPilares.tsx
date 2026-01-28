@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { Brain, BarChart3, Layers, Check } from "lucide-react";
+import { Brain, BarChart3, Layers, Check, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20entender%20melhor%20como%20funciona%20o%20OdontoAgent.";
 
 const pillars = [
   {
     icon: Brain,
     title: "Eficiência Cognitiva",
     tag: "Inteligência Real",
-    description: "IA que compreende contexto clínico e responde com precisão. Não é um bot burro que segue scripts — é inteligência que aprende, adapta e evolui com a rotina da sua clínica.",
+    description: "IA que compreende contexto clínico e responde com precisão. Não é um bot simples que segue scripts. É inteligência que aprende, adapta e evolui com a rotina da sua clínica.",
     bullets: [
       "Compreensão de contexto e intenção",
       "Respostas precisas e humanizadas",
@@ -60,7 +63,7 @@ export function DetalhesPilares() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
@@ -104,6 +107,26 @@ export function DetalhesPilares() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+          >
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2" size={20} />
+              Entender como aplicar na minha clínica
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

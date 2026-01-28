@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, Zap, TrendingDown, Clock, BarChart3, Frown, RefreshCw, Check } from "lucide-react";
+import { AlertTriangle, Zap, TrendingDown, Clock, BarChart3, Frown, RefreshCw, Check, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20saber%20mais%20sobre%20o%20OdontoAgent.";
 
 const problemItems = [
   { icon: TrendingDown, text: "Leads perdidos por demora no primeiro contato" },
@@ -12,7 +15,7 @@ const problemItems = [
 
 const solutionItems = [
   "Resposta instantânea, 24 horas por dia, 7 dias por semana",
-  "Qualificação automática — leads prontos chegam organizados",
+  "Qualificação automática: leads prontos chegam organizados",
   "ROI de marketing protegido e otimizado",
   "Dados em tempo real para decisões estratégicas",
   "Doutor com paz de espírito e controle total",
@@ -52,12 +55,12 @@ export function DetalhesCustoOmissao() {
           </h2>
           <p className="text-lg text-white/70 max-w-3xl mx-auto">
             Enquanto sua equipe está ocupada, pacientes prontos para agendar vão para a concorrência. 
-            Nossa IA garante resposta em segundos — protegendo seu faturamento.
+            Nossa IA garante resposta em segundos, protegendo seu faturamento.
           </p>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
           {/* Card Sem IA */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -91,16 +94,16 @@ export function DetalhesCustoOmissao() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             whileHover={{ scale: 1.02 }}
-            className="glass-card-dark-accent p-8 rounded-2xl border-beam relative"
+            className="glass-card-dark-accent p-8 rounded-2xl border-beam relative pt-10"
           >
-            {/* Recommended Badge */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-              <span className="px-4 py-1.5 bg-gradient-gold text-primary-foreground text-xs font-bold rounded-full shadow-gold-glow whitespace-nowrap">
+            {/* Recommended Badge - Fixed */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
+              <span className="inline-block px-4 py-1.5 bg-gradient-gold text-navy-dark text-xs font-bold rounded-full shadow-lg">
                 RECOMENDADO
               </span>
             </div>
 
-            <div className="flex items-center gap-3 mb-6 mt-2">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-[hsl(var(--gold)/0.2)] flex items-center justify-center">
                 <Zap className="w-6 h-6 text-[hsl(var(--gold))]" />
               </div>
@@ -117,6 +120,26 @@ export function DetalhesCustoOmissao() {
             </ul>
           </motion.div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-center"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-gold hover:shadow-gold-glow text-navy-dark font-bold text-base px-8 py-6 shadow-lg transition-all duration-300"
+          >
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2" size={20} />
+              Quero proteger meu faturamento
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
