@@ -94,16 +94,16 @@ export function DetalhesCustoOmissao() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             whileHover={{ scale: 1.02 }}
-            className="glass-card-dark-accent p-8 rounded-2xl border-beam relative pt-12 mt-4"
+            className="glass-card-dark-accent p-8 rounded-2xl border-beam relative overflow-visible"
           >
-            {/* Recommended Badge - Fixed with better visibility */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-30">
-              <span className="inline-block px-5 py-2 bg-gradient-to-r from-[hsl(30,40%,50%)] via-[hsl(30,45%,65%)] to-[hsl(30,50%,75%)] text-[hsl(220,45%,15%)] text-xs font-bold rounded-full shadow-xl whitespace-nowrap">
+            {/* Recommended Badge - Simple and reliable */}
+            <div className="absolute -top-5 left-0 right-0 flex justify-center">
+              <span className="bg-[#C4956A] text-[#1a2332] text-xs font-bold px-6 py-2 rounded-full shadow-lg">
                 RECOMENDADO
               </span>
             </div>
 
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6 mt-4">
               <div className="w-12 h-12 rounded-xl bg-[hsl(var(--gold)/0.2)] flex items-center justify-center">
                 <Zap className="w-6 h-6 text-[hsl(var(--gold))]" />
               </div>

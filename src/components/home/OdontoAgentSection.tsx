@@ -51,7 +51,8 @@ export function OdontoAgentSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6"
           >
-            O assistente de IA que sua clínica precisa —{" "}
+            O assistente de IA que sua clínica precisa{" "}
+            <span className="text-odontoagent">→</span>{" "}
             <span className="text-odontoagent">mas que seus pacientes nem vão perceber que é tecnologia.</span>
           </motion.h2>
 
