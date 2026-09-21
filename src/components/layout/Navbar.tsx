@@ -7,11 +7,32 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/detalhes", label: "Detalhes" },
-  { href: "/sobre", label: "Sobre" },
-  { href: "/planos", label: "Planos e Como Funciona" },
+  { href: "/detalhes", label: "Como funciona" },
+  { href: "/planos", label: "Planos" },
+  { href: "/sobre", label: "Quem somos" },
   { href: "/contato", label: "Contato" },
 ];
+
+function BrandMark() {
+  return (
+    <span className="flex items-center gap-2.5">
+      <img
+        src="/logo-arenium.png"
+        alt=""
+        aria-hidden="true"
+        className="h-9 w-9 lg:h-10 lg:w-10 flex-shrink-0 rounded-lg object-cover"
+      />
+      <span className="leading-none">
+        <span className="block text-lg lg:text-xl font-bold text-primary tracking-tight">
+          Odonto<span className="text-accent">Agent</span>
+        </span>
+        <span className="block text-[10px] lg:text-[11px] uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
+          por Arenium
+        </span>
+      </span>
+    </span>
+  );
+}
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,24 +63,20 @@ export function Navbar() {
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl lg:text-2xl font-bold text-primary">
-              Deborah <span className="text-accent">Alves</span>
-            </span>
+          <Link to="/" className="flex items-center gap-2" aria-label="OdontoAgent, por Arenium">
+            <BrandMark />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-accent",
+                  "relative text-sm font-medium transition-colors hover:text-accent after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full",
                   location.pathname === link.href
-                    ? "text-accent"
-                    : "text-foreground/80"
+                    ? "text-accent after:w-full"
+                    : "text-foreground/80 after:w-0"
                 )}
               >
                 {link.label}
@@ -67,30 +84,25 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
           <div className="hidden lg:block">
             <Button
               asChild
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6 shadow-[0_0_0_0_hsl(var(--gold)/0.5)] hover:shadow-[0_0_24px_-6px_hsl(var(--gold)/0.8)] transition-shadow duration-300"
             >
-              <Link to="/contato#formulario">
-                Agende uma Demonstração
-              </Link>
+              <Link to="/contato#formulario">Agendar demonstração</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
+            aria-label="Abrir menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -118,9 +130,7 @@ export function Navbar() {
                 asChild
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2"
               >
-                <Link to="/contato#formulario">
-                  Agende uma Demonstração
-                </Link>
+                <Link to="/contato#formulario">Agendar demonstração</Link>
               </Button>
             </div>
           </motion.div>
