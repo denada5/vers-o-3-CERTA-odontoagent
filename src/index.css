@@ -409,3 +409,97 @@ All colors MUST be HSL.
       hsl(0 0% 100%);
   }
 }
+
+@layer utilities {
+  /* Brilho que segue o cursor dentro do card */
+  .spotlight {
+    position: relative;
+  }
+
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 0%),
+      hsl(var(--gold) / 0.14),
+      transparent 62%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+
+  .spotlight > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Menu horizontal sem barra de rolagem visivel */
+  .nav-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Linha de tabela com marcador lateral ao apontar */
+  .row-mark {
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  .row-mark td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: hsl(var(--gold));
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .row-mark:hover td:first-child::before,
+  .row-mark:focus-within td:first-child::before {
+    transform: scaleY(1);
+  }
+
+  /* Sublinhado que cresce sob o item de menu ativo */
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: hsl(var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-underline:hover::after,
+  .nav-underline[data-active='true']::after {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spotlight::after,
+    .row-mark td:first-child::before,
+    .nav-underline::after {
+      transition: none;
+    }
+  }
+}
