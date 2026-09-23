@@ -9,45 +9,45 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 30% 20%;
+    --foreground: 268 24% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 20%;
+    --card-foreground: 268 24% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 20%;
+    --popover-foreground: 268 24% 18%;
 
     /* Navy Blue - Primary */
-    --primary: 220 45% 20%;
+    --primary: 268 52% 30%;
     --primary-foreground: 0 0% 100%;
 
     /* Light gray for secondary */
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 220 45% 20%;
+    --secondary: 268 20% 97%;
+    --secondary-foreground: 268 52% 30%;
 
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 268 18% 97%;
+    --muted-foreground: 268 8% 46%;
 
     /* Premium Gold - Accent */
-    --accent: 30 45% 65%;
-    --accent-foreground: 220 45% 15%;
+    --accent: 41 74% 53%;
+    --accent-foreground: 270 55% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 30 45% 65%;
+    --border: 268 16% 90%;
+    --input: 268 16% 90%;
+    --ring: 41 74% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     /* Custom colors for the brand */
-    --gold: 30 45% 65%;
-    --gold-light: 30 50% 75%;
-    --gold-dark: 30 40% 50%;
-    --navy: 220 45% 20%;
-    --navy-light: 220 35% 35%;
-    --navy-dark: 220 50% 12%;
+    --gold: 41 74% 53%;
+    --gold-light: 41 82% 66%;
+    --gold-dark: 41 70% 42%;
+    --navy: 268 52% 30%;
+    --navy-light: 268 40% 44%;
+    --navy-dark: 270 58% 17%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -60,40 +60,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 50% 8%;
+    --background: 270 58% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 220 50% 12%;
+    --card: 270 52% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 50% 12%;
+    --popover: 270 52% 15%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 30 45% 65%;
     --primary-foreground: 220 45% 10%;
 
-    --secondary: 220 40% 18%;
+    --secondary: 270 40% 22%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 40% 18%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 270 40% 22%;
+    --muted-foreground: 270 15% 70%;
 
-    --accent: 30 45% 65%;
-    --accent-foreground: 220 45% 10%;
+    --accent: 41 74% 53%;
+    --accent-foreground: 270 55% 14%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 40% 20%;
-    --input: 220 40% 20%;
-    --ring: 30 45% 65%;
+    --border: 270 38% 26%;
+    --input: 270 38% 26%;
+    --ring: 41 74% 53%;
 
-    --gold: 30 45% 65%;
-    --gold-light: 30 50% 75%;
-    --gold-dark: 30 40% 50%;
-    --navy: 220 45% 20%;
-    --navy-light: 220 35% 35%;
-    --navy-dark: 220 50% 12%;
+    --gold: 41 74% 53%;
+    --gold-light: 41 82% 66%;
+    --gold-dark: 41 70% 42%;
+    --navy: 268 52% 30%;
+    --navy-light: 268 40% 44%;
+    --navy-dark: 270 58% 17%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -124,7 +124,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: hsl(0 0% 100%);
-    color: hsl(220 30% 20%);
+    color: hsl(268 24% 18%);
   }
 
   /* Ensure non-interactive elements don't have pointer cursor */
@@ -161,12 +161,11 @@ All colors MUST be HSL.
 
   /* Champagne/Gold Off-White Hero Gradient */
   .bg-hero-champagne {
-    background: 
-      radial-gradient(ellipse at 30% 20%, hsl(35 30% 92% / 0.8) 0px, transparent 50%),
-      radial-gradient(ellipse at 70% 80%, hsl(30 40% 88% / 0.6) 0px, transparent 45%),
-      radial-gradient(ellipse at 90% 10%, hsl(var(--gold-light) / 0.3) 0px, transparent 40%),
-      radial-gradient(ellipse at 10% 90%, hsl(var(--navy-light) / 0.08) 0px, transparent 50%),
-      linear-gradient(135deg, hsl(35 25% 96%) 0%, hsl(30 20% 94%) 50%, hsl(35 30% 92%) 100%);
+    background:
+      radial-gradient(ellipse at 22% 12%, hsl(var(--gold) / 0.12) 0px, transparent 48%),
+      radial-gradient(ellipse at 82% 8%, hsl(var(--navy) / 0.10) 0px, transparent 46%),
+      radial-gradient(ellipse at 70% 92%, hsl(var(--navy-light) / 0.10) 0px, transparent 50%),
+      linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(268 30% 99%) 55%, hsl(268 26% 97%) 100%);
   }
 
   /* Grain/Noise Texture Overlay */
@@ -218,7 +217,7 @@ All colors MUST be HSL.
       radial-gradient(ellipse at 20% 20%, hsl(var(--navy-light) / 0.4) 0px, transparent 50%),
       radial-gradient(ellipse at 80% 80%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
       radial-gradient(ellipse at 50% 50%, hsl(var(--navy) / 0.95) 0px, transparent 80%),
-      linear-gradient(135deg, hsl(220 50% 12%) 0%, hsl(220 50% 8%) 100%);
+      linear-gradient(135deg, hsl(268 52% 26%) 0%, hsl(270 60% 13%) 100%);
   }
 
   /* Glassmorphism Effects */
@@ -343,6 +342,164 @@ All colors MUST be HSL.
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  /* Borda que acende no hover, sem parecer clicavel */
+  .card-glow {
+    position: relative;
+    isolation: isolate;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+  }
+
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg,
+      hsl(var(--gold) / 0.9) 0%,
+      hsl(var(--gold-light) / 0.5) 35%,
+      hsl(var(--navy-light) / 0.7) 70%,
+      hsl(var(--gold) / 0.8) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .card-glow:hover::before,
+  .card-glow:focus-within::before {
+    opacity: 1;
+  }
+
+  .card-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -22px hsl(var(--navy) / 0.45), 0 0 26px -12px hsl(var(--gold) / 0.55);
+  }
+
+  .card-glow-dark:hover {
+    box-shadow: 0 18px 44px -20px hsl(0 0% 0% / 0.6), 0 0 30px -10px hsl(var(--gold) / 0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-glow,
+    .card-glow:hover {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.55), transparent);
+  }
+
+  .bg-surface-soft {
+    background:
+      radial-gradient(ellipse at 15% 0%, hsl(var(--navy) / 0.05) 0px, transparent 45%),
+      radial-gradient(ellipse at 90% 100%, hsl(var(--gold) / 0.07) 0px, transparent 45%),
+      hsl(0 0% 100%);
+  }
+}
+
+@layer utilities {
+  /* Brilho que segue o cursor dentro do card */
+  .spotlight {
+    position: relative;
+  }
+
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 0%),
+      hsl(var(--gold) / 0.14),
+      transparent 62%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+
+  .spotlight > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Menu horizontal sem barra de rolagem visivel */
+  .nav-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Linha de tabela com marcador lateral ao apontar */
+  .row-mark {
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  .row-mark td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: hsl(var(--gold));
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .row-mark:hover td:first-child::before,
+  .row-mark:focus-within td:first-child::before {
+    transform: scaleY(1);
+  }
+
+  /* Sublinhado que cresce sob o item de menu ativo */
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: hsl(var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-underline:hover::after,
+  .nav-underline[data-active='true']::after {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spotlight::after,
+    .row-mark td:first-child::before,
+    .nav-underline::after {
+      transition: none;
     }
   }
 }

@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20agendar%20um%20diagnóstico%20para%20minha%20clínica.";
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá,%20vim%20do%20site%20do%20OdontoAgent%20e%20gostaria%20de%20agendar%20uma%20demonstração.";
 
 const Contato = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -83,12 +83,11 @@ const Contato = () => {
               Contato
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6 select-none">
-              Vamos transformar sua{" "}
-              <span className="text-accent">clínica</span> juntos?
+              Vamos conversar sobre{" "}
+              <span className="text-accent">a sua clínica?</span>
             </h1>
             <p className="text-lg text-muted-foreground select-none">
-              Preencha o formulário abaixo para agendar uma reunião de diagnóstico 
-              ou fale diretamente comigo pelo WhatsApp.
+              Preencha o formulário ou chame a gente no WhatsApp.
             </p>
           </motion.div>
         </div>
@@ -110,11 +109,10 @@ const Contato = () => {
                     <CheckCircle2 className="text-accent" size={32} />
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-4 select-none">
-                    Formulário Enviado!
+                    Recebemos seus dados!
                   </h3>
                   <p className="text-muted-foreground mb-6 select-none">
-                    Recebemos suas informações e entraremos em contato em breve 
-                    para agendar sua reunião de diagnóstico.
+                    Entramos em contato para marcar a demonstração.
                   </p>
                   <Button
                     asChild
@@ -122,17 +120,17 @@ const Contato = () => {
                   >
                     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2" size={18} />
-                      Falar Agora no WhatsApp
+                      Falar agora no WhatsApp
                     </a>
                   </Button>
                 </div>
               ) : (
                 <div className="glass-card-premium rounded-2xl p-6 lg:p-8">
                   <h2 className="text-2xl font-bold text-primary mb-2 select-none">
-                    Agende sua Reunião de Diagnóstico
+                    Agende sua demonstração
                   </h2>
                   <p className="text-sm text-muted-foreground mb-6 select-none">
-                    Conte um pouco sobre sua clínica e seus desafios. Vou analisar e entrar em contato para agendarmos uma conversa.
+                    Conte o que mais incomoda hoje no seu atendimento.
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -232,7 +230,7 @@ const Contato = () => {
                       ) : (
                         <>
                           <Send className="mr-2" size={18} />
-                          Solicitar Reunião de Diagnóstico
+                          Agendar demonstração
                         </>
                       )}
                     </Button>
@@ -253,9 +251,8 @@ const Contato = () => {
               </h2>
 
               <p className="text-muted-foreground mb-8 leading-relaxed select-none">
-                Fale diretamente comigo pelo WhatsApp e agende sua reunião de diagnóstico 
-                em minutos. Estou pronta para entender suas necessidades 
-                e apresentar a melhor solução para sua clínica.
+                Chame a gente no WhatsApp e agende por lá. Mostramos o OdontoAgent
+                respondendo como ele responderia seus pacientes.
               </p>
 
               <Button
@@ -279,19 +276,19 @@ const Contato = () => {
                     <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-accent text-sm font-bold">
                       1
                     </span>
-                    <span>Recebo suas informações e analiso seu perfil</span>
+                    <span>Olhamos o perfil da sua clínica</span>
                   </li>
                   <li className="flex items-start gap-3 select-none">
                     <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-accent text-sm font-bold">
                       2
                     </span>
-                    <span>Entro em contato para agendar a reunião de diagnóstico</span>
+                    <span>Marcamos a demonstração</span>
                   </li>
                   <li className="flex items-start gap-3 select-none">
                     <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-accent text-sm font-bold">
                       3
                     </span>
-                    <span>Apresento uma proposta personalizada para sua clínica</span>
+                    <span>Apresentamos a proposta desenhada para ela</span>
                   </li>
                 </ul>
               </div>
