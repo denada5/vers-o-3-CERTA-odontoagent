@@ -87,8 +87,7 @@ const Contato = () => {
               <span className="text-accent">a sua clínica?</span>
             </h1>
             <p className="text-lg text-muted-foreground select-none">
-              Preencha o formulário para agendar uma demonstração ou fale direto
-              com a gente pelo WhatsApp.
+              Preencha o formulário ou chame a gente no WhatsApp.
             </p>
           </motion.div>
         </div>
@@ -113,8 +112,7 @@ const Contato = () => {
                     Recebemos seus dados!
                   </h3>
                   <p className="text-muted-foreground mb-6 select-none">
-                    Entramos em contato para marcar a demonstração e entender como
-                    sua clínica atende hoje.
+                    Entramos em contato para marcar a demonstração.
                   </p>
                   <Button
                     asChild
@@ -132,7 +130,7 @@ const Contato = () => {
                     Agende sua demonstração
                   </h2>
                   <p className="text-sm text-muted-foreground mb-6 select-none">
-                    Conte um pouco sobre sua clínica e o que mais incomoda hoje no atendimento.
+                    Conte o que mais incomoda hoje no seu atendimento.
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -253,8 +251,7 @@ const Contato = () => {
               </h2>
 
               <p className="text-muted-foreground mb-8 leading-relaxed select-none">
-                Chame a gente no WhatsApp e agende a demonstração direto por lá.
-                A gente entende como sua clínica atende hoje e mostra o OdontoAgent
+                Chame a gente no WhatsApp e agende por lá. Mostramos o OdontoAgent
                 respondendo como ele responderia seus pacientes.
               </p>
 
@@ -279,19 +276,19 @@ const Contato = () => {
                     <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-accent text-sm font-bold">
                       1
                     </span>
-                    <span>Recebemos seus dados e olhamos o perfil da sua clínica</span>
+                    <span>Olhamos o perfil da sua clínica</span>
                   </li>
                   <li className="flex items-start gap-3 select-none">
                     <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-accent text-sm font-bold">
                       2
                     </span>
-                    <span>Entramos em contato para marcar a demonstração</span>
+                    <span>Marcamos a demonstração</span>
                   </li>
                   <li className="flex items-start gap-3 select-none">
                     <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-accent text-sm font-bold">
                       3
                     </span>
-                    <span>Apresentamos uma proposta desenhada para a sua clínica</span>
+                    <span>Apresentamos a proposta desenhada para ela</span>
                   </li>
                 </ul>
               </div>
