@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, Instagram, MapPin } from "lucide-react";
+import { MessageCircle, Mail, MapPin } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá%20Deborah,%20gostaria%20de%20agendar%20um%20diagnóstico%20para%20minha%20clínica.";
-const INSTAGRAM_URL = "https://instagram.com/a_deborah_alves";
+const WHATSAPP_URL = "https://wa.me/551137219385?text=Olá,%20vim%20do%20site%20do%20OdontoAgent%20e%20gostaria%20de%20agendar%20uma%20demonstração.";
 
 export function Footer() {
   return (
@@ -11,11 +10,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold mb-4">
-              Deborah <span className="text-accent">Alves</span>
+            <img
+              src="/logo-arenium.png"
+              alt="Arenium"
+              className="h-12 w-12 rounded-lg object-cover mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">
+              Odonto<span className="text-accent">Agent</span>
             </h3>
+            <p className="text-primary-foreground/60 text-xs uppercase tracking-[0.18em] mb-4">
+              por Arenium
+            </p>
             <p className="text-primary-foreground/80 text-sm">
-              Ponto de Dados & Automação para clínicas que querem crescer com inteligência.
+              Atendimento de WhatsApp implantado na sua clínica odontológica, integrado à agenda
+              e ao sistema que você já usa.
             </p>
           </div>
 
@@ -27,13 +35,13 @@ export function Footer() {
                 Home
               </Link>
               <Link to="/detalhes" className="text-primary-foreground/80 hover:text-accent text-sm transition-colors cursor-pointer">
-                Detalhes
+                Como funciona
               </Link>
               <Link to="/sobre" className="text-primary-foreground/80 hover:text-accent text-sm transition-colors cursor-pointer">
-                Sobre
+                Quem somos
               </Link>
               <Link to="/planos" className="text-primary-foreground/80 hover:text-accent text-sm transition-colors cursor-pointer">
-                Planos e Como Funciona
+                Planos
               </Link>
               <Link to="/contato" className="text-primary-foreground/80 hover:text-accent text-sm transition-colors cursor-pointer">
                 Contato
@@ -61,15 +69,6 @@ export function Footer() {
                 <Mail size={18} className="text-accent flex-shrink-0" />
                 <span>contato@deborahalves.lat</span>
               </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-accent text-sm transition-colors cursor-pointer"
-              >
-                <Instagram size={18} className="text-accent flex-shrink-0" />
-                <span>@a_deborah_alves</span>
-              </a>
             </div>
           </div>
 
@@ -78,14 +77,14 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Localização</h4>
             <div className="flex items-start gap-2 text-primary-foreground/80 text-sm">
               <MapPin size={18} className="text-accent flex-shrink-0 mt-0.5" />
-              <span>Base em São Paulo. Atendimento online para todas as localidades.</span>
+              <span>Base em São Paulo. Atendimento online para todo o Brasil.</span>
             </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Deborah Alves. Todos os direitos reservados.
+            © {new Date().getFullYear()} OdontoAgent é um produto Arenium. Todos os direitos reservados.
           </p>
         </div>
       </div>
