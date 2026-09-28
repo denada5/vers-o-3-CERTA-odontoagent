@@ -1,0 +1,505 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 194 22% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 194 22% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 194 22% 15%;
+
+    /* Navy Blue - Primary */
+    --primary: 188 54% 16%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light gray for secondary */
+    --secondary: 188 24% 96%;
+    --secondary-foreground: 188 54% 16%;
+
+    --muted: 188 20% 96%;
+    --muted-foreground: 194 10% 42%;
+
+    /* Premium Gold - Accent */
+    --accent: 41 74% 53%;
+    --accent-foreground: 190 70% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 190 16% 88%;
+    --input: 190 16% 88%;
+    --ring: 41 74% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for the brand */
+    --gold: 41 74% 53%;
+    --gold-light: 41 82% 66%;
+    --gold-dark: 41 70% 42%;
+    --navy: 188 54% 16%;
+    --navy-light: 188 36% 30%;
+    --navy-dark: 190 62% 9%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 190 62% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 189 50% 13%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 189 50% 13%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 30 45% 65%;
+    --primary-foreground: 220 45% 10%;
+
+    --secondary: 189 34% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 189 34% 20%;
+    --muted-foreground: 190 14% 70%;
+
+    --accent: 41 74% 53%;
+    --accent-foreground: 190 70% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 189 30% 24%;
+    --input: 189 30% 24%;
+    --ring: 41 74% 53%;
+
+    --gold: 41 74% 53%;
+    --gold-light: 41 82% 66%;
+    --gold-dark: 41 70% 42%;
+    --navy: 188 54% 16%;
+    --navy-light: 188 36% 30%;
+    --navy-dark: 190 62% 9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* FORÇA O LIGHT MODE - ignora preferências do sistema */
+  :root {
+    color-scheme: light only;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: hsl(0 0% 100%);
+    color: hsl(194 22% 15%);
+  }
+
+  /* Ensure non-interactive elements don't have pointer cursor */
+  h1, h2, h3, h4, h5, h6, p, span, div, section, article, header, footer, main {
+    cursor: default;
+  }
+
+  /* Ensure interactive elements have pointer cursor */
+  a, button, [role="button"], input, select, textarea, label[for] {
+    cursor: pointer;
+  }
+
+  input, textarea {
+    cursor: text;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))] bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-gold {
+    @apply bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))];
+  }
+
+  .bg-gradient-navy {
+    @apply bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--navy-dark))];
+  }
+
+  /* Champagne/Gold Off-White Hero Gradient */
+  .bg-hero-champagne {
+    background:
+      radial-gradient(ellipse at 22% 12%, hsl(var(--gold) / 0.12) 0px, transparent 48%),
+      radial-gradient(ellipse at 82% 8%, hsl(var(--navy) / 0.10) 0px, transparent 46%),
+      radial-gradient(ellipse at 70% 92%, hsl(var(--navy-light) / 0.10) 0px, transparent 50%),
+      linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(188 26% 99%) 55%, hsl(188 24% 97%) 100%);
+  }
+
+  /* Grain/Noise Texture Overlay */
+  .grain-texture {
+    position: relative;
+  }
+  
+  .grain-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Geometric Blueprint Lines */
+  .blueprint-lines {
+    position: relative;
+  }
+  
+  .blueprint-lines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(90deg, hsl(var(--navy) / 0.03) 1px, transparent 1px),
+      linear-gradient(hsl(var(--navy) / 0.03) 1px, transparent 1px),
+      linear-gradient(45deg, hsl(var(--gold) / 0.02) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 120px 120px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Mesh Gradient Backgrounds */
+  .bg-mesh-gradient {
+    background: 
+      radial-gradient(at 40% 20%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--navy-light) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--gold-light) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(var(--navy) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(var(--gold) / 0.1) 0px, transparent 50%),
+      hsl(var(--background));
+  }
+
+  .bg-mesh-gradient-dark {
+    background: 
+      radial-gradient(ellipse at 20% 20%, hsl(var(--navy-light) / 0.4) 0px, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(var(--navy) / 0.95) 0px, transparent 80%),
+      linear-gradient(135deg, hsl(188 52% 17%) 0%, hsl(190 64% 8%) 100%);
+  }
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    @apply backdrop-blur-xl border shadow-xl;
+    background: hsl(var(--navy-light) / 0.3);
+    border-color: hsl(0 0% 100% / 0.15);
+  }
+
+  .glass-card-premium {
+    @apply backdrop-blur-2xl border shadow-2xl;
+    background: hsl(0 0% 100% / 0.85);
+    border-color: hsl(0 0% 100% / 0.4);
+    box-shadow: 
+      0 8px 40px hsl(var(--navy) / 0.1),
+      0 2px 12px hsl(var(--gold) / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.5);
+  }
+
+  .glass-card-premium:hover {
+    box-shadow: 
+      0 12px 50px hsl(var(--gold) / 0.2),
+      0 4px 20px hsl(var(--navy) / 0.15),
+      inset 0 1px 0 hsl(0 0% 100% / 0.6);
+    border-color: hsl(var(--gold) / 0.3);
+  }
+
+  .glass-card-accent {
+    @apply backdrop-blur-xl border;
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(0 0% 100% / 0.7) 100%);
+    border-color: hsl(0 0% 100% / 0.4);
+    box-shadow: 
+      0 8px 32px hsl(var(--gold) / 0.15),
+      inset 0 1px 0 hsl(0 0% 100% / 0.4);
+  }
+
+  /* Dark glassmorphism for navy sections */
+  .glass-card-dark {
+    @apply backdrop-blur-xl border;
+    background: hsl(var(--navy-light) / 0.4);
+    border-color: hsl(0 0% 100% / 0.1);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
+  .glass-card-dark-accent {
+    @apply backdrop-blur-xl border relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--navy-light) / 0.5) 0%, hsl(var(--gold) / 0.1) 100%);
+    border-color: hsl(var(--gold) / 0.3);
+    box-shadow: 
+      0 8px 32px hsl(var(--gold) / 0.2),
+      inset 0 1px 0 hsl(var(--gold) / 0.2);
+  }
+
+  /* Animated border beam effect */
+  .border-beam {
+    position: relative;
+  }
+  
+  .border-beam::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold-light)) 25%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 75%,
+      hsl(var(--gold-dark)) 100%
+    );
+    background-size: 200% 100%;
+    animation: borderBeam 3s linear infinite;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 0;
+  }
+
+  @keyframes borderBeam {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Glow shadows */
+  .shadow-gold-glow {
+    box-shadow: 
+      0 0 20px hsl(var(--gold) / 0.4),
+      0 0 40px hsl(var(--gold) / 0.2),
+      0 8px 32px hsl(var(--gold) / 0.3);
+  }
+
+  .shadow-navy-glow {
+    box-shadow: 
+      0 0 20px hsl(var(--navy) / 0.3),
+      0 0 40px hsl(var(--navy-light) / 0.2),
+      0 8px 32px hsl(var(--navy) / 0.2);
+  }
+
+  /* Premium text styling for OdontoAgent */
+  .text-odontoagent {
+    @apply font-bold bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))] bg-clip-text text-transparent;
+    filter: drop-shadow(0 0 12px hsl(var(--gold) / 0.4));
+  }
+
+  /* Float animation for scroll effects */
+  .float-in {
+    animation: floatIn 0.8s ease-out forwards;
+  }
+
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  /* Borda que acende no hover, sem parecer clicavel */
+  .card-glow {
+    position: relative;
+    isolation: isolate;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+  }
+
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg,
+      hsl(var(--gold) / 0.9) 0%,
+      hsl(var(--gold-light) / 0.5) 35%,
+      hsl(var(--navy-light) / 0.7) 70%,
+      hsl(var(--gold) / 0.8) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .card-glow:hover::before,
+  .card-glow:focus-within::before {
+    opacity: 1;
+  }
+
+  .card-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -22px hsl(var(--navy) / 0.45), 0 0 26px -12px hsl(var(--gold) / 0.55);
+  }
+
+  .card-glow-dark:hover {
+    box-shadow: 0 18px 44px -20px hsl(0 0% 0% / 0.6), 0 0 30px -10px hsl(var(--gold) / 0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-glow,
+    .card-glow:hover {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.55), transparent);
+  }
+
+  .bg-surface-soft {
+    background:
+      radial-gradient(ellipse at 15% 0%, hsl(var(--navy) / 0.05) 0px, transparent 45%),
+      radial-gradient(ellipse at 90% 100%, hsl(var(--gold) / 0.07) 0px, transparent 45%),
+      hsl(0 0% 100%);
+  }
+}
+
+@layer utilities {
+  /* Brilho que segue o cursor dentro do card */
+  .spotlight {
+    position: relative;
+  }
+
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 0%),
+      hsl(var(--gold) / 0.14),
+      transparent 62%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+
+  .spotlight > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Menu horizontal sem barra de rolagem visivel */
+  .nav-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Linha de tabela com marcador lateral ao apontar */
+  .row-mark {
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  .row-mark td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: hsl(var(--gold));
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .row-mark:hover td:first-child::before,
+  .row-mark:focus-within td:first-child::before {
+    transform: scaleY(1);
+  }
+
+  /* Sublinhado que cresce sob o item de menu ativo */
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: hsl(var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-underline:hover::after,
+  .nav-underline[data-active='true']::after {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spotlight::after,
+    .row-mark td:first-child::before,
+    .nav-underline::after {
+      transition: none;
+    }
+  }
+}
