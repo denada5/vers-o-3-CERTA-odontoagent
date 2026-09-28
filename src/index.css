@@ -9,34 +9,34 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 268 24% 18%;
+    --foreground: 194 22% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 268 24% 18%;
+    --card-foreground: 194 22% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 268 24% 18%;
+    --popover-foreground: 194 22% 15%;
 
     /* Navy Blue - Primary */
-    --primary: 268 52% 30%;
+    --primary: 188 54% 16%;
     --primary-foreground: 0 0% 100%;
 
     /* Light gray for secondary */
-    --secondary: 268 20% 97%;
-    --secondary-foreground: 268 52% 30%;
+    --secondary: 188 24% 96%;
+    --secondary-foreground: 188 54% 16%;
 
-    --muted: 268 18% 97%;
-    --muted-foreground: 268 8% 46%;
+    --muted: 188 20% 96%;
+    --muted-foreground: 194 10% 42%;
 
     /* Premium Gold - Accent */
     --accent: 41 74% 53%;
-    --accent-foreground: 270 55% 16%;
+    --accent-foreground: 190 70% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 268 16% 90%;
-    --input: 268 16% 90%;
+    --border: 190 16% 88%;
+    --input: 190 16% 88%;
     --ring: 41 74% 53%;
 
     --radius: 0.75rem;
@@ -45,9 +45,9 @@ All colors MUST be HSL.
     --gold: 41 74% 53%;
     --gold-light: 41 82% 66%;
     --gold-dark: 41 70% 42%;
-    --navy: 268 52% 30%;
-    --navy-light: 268 40% 44%;
-    --navy-dark: 270 58% 17%;
+    --navy: 188 54% 16%;
+    --navy-light: 188 36% 30%;
+    --navy-dark: 190 62% 9%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -60,40 +60,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 270 58% 10%;
+    --background: 190 62% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 270 52% 15%;
+    --card: 189 50% 13%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 270 52% 15%;
+    --popover: 189 50% 13%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 30 45% 65%;
     --primary-foreground: 220 45% 10%;
 
-    --secondary: 270 40% 22%;
+    --secondary: 189 34% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 270 40% 22%;
-    --muted-foreground: 270 15% 70%;
+    --muted: 189 34% 20%;
+    --muted-foreground: 190 14% 70%;
 
     --accent: 41 74% 53%;
-    --accent-foreground: 270 55% 14%;
+    --accent-foreground: 190 70% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 38% 26%;
-    --input: 270 38% 26%;
+    --border: 189 30% 24%;
+    --input: 189 30% 24%;
     --ring: 41 74% 53%;
 
     --gold: 41 74% 53%;
     --gold-light: 41 82% 66%;
     --gold-dark: 41 70% 42%;
-    --navy: 268 52% 30%;
-    --navy-light: 268 40% 44%;
-    --navy-dark: 270 58% 17%;
+    --navy: 188 54% 16%;
+    --navy-light: 188 36% 30%;
+    --navy-dark: 190 62% 9%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -124,7 +124,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: hsl(0 0% 100%);
-    color: hsl(268 24% 18%);
+    color: hsl(194 22% 15%);
   }
 
   /* Ensure non-interactive elements don't have pointer cursor */
@@ -165,7 +165,7 @@ All colors MUST be HSL.
       radial-gradient(ellipse at 22% 12%, hsl(var(--gold) / 0.12) 0px, transparent 48%),
       radial-gradient(ellipse at 82% 8%, hsl(var(--navy) / 0.10) 0px, transparent 46%),
       radial-gradient(ellipse at 70% 92%, hsl(var(--navy-light) / 0.10) 0px, transparent 50%),
-      linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(268 30% 99%) 55%, hsl(268 26% 97%) 100%);
+      linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(188 26% 99%) 55%, hsl(188 24% 97%) 100%);
   }
 
   /* Grain/Noise Texture Overlay */
@@ -217,7 +217,7 @@ All colors MUST be HSL.
       radial-gradient(ellipse at 20% 20%, hsl(var(--navy-light) / 0.4) 0px, transparent 50%),
       radial-gradient(ellipse at 80% 80%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
       radial-gradient(ellipse at 50% 50%, hsl(var(--navy) / 0.95) 0px, transparent 80%),
-      linear-gradient(135deg, hsl(268 52% 26%) 0%, hsl(270 60% 13%) 100%);
+      linear-gradient(135deg, hsl(188 52% 17%) 0%, hsl(190 64% 8%) 100%);
   }
 
   /* Glassmorphism Effects */
