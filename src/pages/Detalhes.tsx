@@ -37,7 +37,8 @@ const ladoPaciente = [
   {
     icon: MessageCircle,
     titulo: "Pergunta e é respondido",
-    texto: "Preço, convênio, duração, parcelamento. As respostas são as suas.",
+    texto:
+      "Convênio, duração do tratamento, o que levar, como chegar. E sobre valores, só o que você autorizar.",
   },
   {
     icon: Clock,
@@ -91,7 +92,7 @@ const comparativo = [
     com: "Atendida na hora, com as suas informações",
   },
   {
-    tema: "Preço e convênio",
+    tema: "Dúvida que trava a decisão",
     sem: "\"Em breve retornaremos\" ou um menu de opções",
     com: "Resposta específica, do jeito que você definiu",
   },
@@ -127,7 +128,7 @@ const diferenciais = [
     icon: Brain,
     titulo: "Conhece a sua clínica",
     texto:
-      "Seus tratamentos, valores, convênios e agenda. É o que separa resolver de só responder.",
+      "Seus tratamentos, convênios, profissionais e agenda. É o que separa resolver de só responder.",
   },
   {
     icon: Settings2,
@@ -142,8 +143,9 @@ const diferenciais = [
   },
   {
     icon: Headphones,
-    titulo: "Sua equipe no controle",
-    texto: "Qualquer pessoa assume a conversa, e ele retoma sem perder o fio.",
+    titulo: "Você define o que ele fala",
+    texto:
+      "Valores, condições, o que pode ser dito. E qualquer pessoa da equipe assume a conversa quando quiser.",
   },
   {
     icon: Repeat,
@@ -211,7 +213,7 @@ const Detalhes = () => {
       </section>
 
       {/* LADO DO PACIENTE */}
-      <section className="py-20 lg:py-28 bg-surface-soft">
+      <section className="py-20 lg:py-28 bg-surface-soft section-edge">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl mx-auto text-center mb-14">
             <span className="inline-block px-4 py-2 mb-6 text-xs sm:text-sm font-medium rounded-full border border-accent/40 text-primary select-none">
@@ -249,13 +251,14 @@ const Detalhes = () => {
       </section>
 
       {/* LADO DA CLÍNICA */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28 bg-mesh-gradient-dark relative overflow-hidden">
+        <div className="absolute top-20 left-0 w-72 h-72 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl mx-auto text-center mb-14">
-            <span className="inline-block px-4 py-2 mb-6 text-xs sm:text-sm font-medium rounded-full border border-accent/40 text-primary select-none">
+            <span className="inline-block px-4 py-2 mb-6 text-xs sm:text-sm font-medium rounded-full border border-accent/30 text-accent select-none">
               Do lado da clínica
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary select-none">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white select-none">
               Sua equipe para de{" "}
               <span className="text-gradient-gold">apagar incêndio.</span>
             </h2>
@@ -264,14 +267,14 @@ const Detalhes = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {ladoClinica.map((item, i) => (
               <Reveal key={item.titulo} delay={i * 0.08}>
-                <SpotlightCard className="h-full rounded-2xl border border-border bg-secondary/40 p-7">
+                <SpotlightCard dark className="h-full glass-card rounded-2xl p-7">
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 border border-accent/30 mb-5">
                     <item.icon size={20} className="text-accent" />
                   </span>
-                  <h3 className="text-lg font-semibold text-primary mb-2 select-none">
+                  <h3 className="text-lg font-semibold text-white mb-2 select-none">
                     {item.titulo}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed select-none">
+                  <p className="text-sm sm:text-base text-white/70 leading-relaxed select-none">
                     {item.texto}
                   </p>
                 </SpotlightCard>
@@ -282,7 +285,7 @@ const Detalhes = () => {
       </section>
 
       {/* TABELA COMPARATIVA */}
-      <section className="py-20 lg:py-28 bg-surface-soft">
+      <section className="py-20 lg:py-28 bg-section-tint section-edge">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary mb-4 select-none">
@@ -346,7 +349,7 @@ const Detalhes = () => {
       </section>
 
       {/* DIFERENCIAIS */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white section-edge">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary select-none">
@@ -376,15 +379,16 @@ const Detalhes = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-surface-soft">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28 bg-mesh-gradient-dark relative overflow-hidden">
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-4xl mx-auto">
-            <SpotlightCard className="rounded-3xl border border-border bg-white px-6 py-14 sm:px-12 text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-5 select-none">
+            <SpotlightCard dark className="glass-card rounded-3xl px-6 py-14 sm:px-12 text-center">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-5 select-none">
                 Quer ver{" "}
                 <span className="text-gradient-gold">na prática?</span>
               </h2>
-              <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-10 select-none">
+              <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto mb-10 select-none">
                 Uma conversa real, com as perguntas que seus pacientes fazem todo
                 dia.
               </p>
@@ -403,7 +407,7 @@ const Detalhes = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-primary/25 text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 h-12"
+                  className="border-white/30 text-white hover:bg-white hover:text-primary font-semibold px-8 h-12 bg-transparent"
                 >
                   <Link to="/planos">
                     Ver planos

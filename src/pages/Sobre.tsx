@@ -14,10 +14,10 @@ const WHATSAPP_URL =
   "https://wa.me/551137219385?text=Olá,%20vim%20do%20site%20do%20OdontoAgent%20e%20gostaria%20de%20falar%20com%20o%20time.";
 
 const provas = [
-  { valor: 12, sufixo: "+", rotulo: "meses construindo antes de vender" },
+  { valor: 12, sufixo: "+", rotulo: "meses de desenvolvimento contínuo" },
   { valor: 10, sufixo: "+", rotulo: "fluxos de trabalho orquestrados" },
   { valor: 20, sufixo: "+", rotulo: "tabelas no banco de dados" },
-  { valor: 24, sufixo: "h", rotulo: "de monitoramento do sistema" },
+  { valor: 24, sufixo: "h", rotulo: "de monitoramento ativo" },
 ];
 
 const times = [
@@ -40,7 +40,7 @@ const times = [
     titulo: "Fala com você",
     pessoas: ["Deborah", "Rafael"],
     texto:
-      "Ligação, demonstração e acompanhamento. Quem vende é quem implanta, então nada é prometido sem ter como entregar.",
+      "Ligação, demonstração e acompanhamento. Ninguém promete o que a engenharia não entrega, porque os dois lados sentam na mesma mesa.",
   },
 ];
 
@@ -53,12 +53,12 @@ const jeito = [
   {
     titulo: "Comunicação",
     texto:
-      "Você fala com quem construiu o sistema, não com um chamado numerado numa fila de suporte.",
+      "Canal direto com o time responsável pela sua clínica, sem fila de chamado anônimo.",
   },
   {
-    titulo: "Melhoria sempre",
+    titulo: "Evolução contínua",
     texto:
-      "Monitoramento e otimização contínuos. O atendimento de hoje é melhor que o do mês passado.",
+      "O sistema recebe melhoria toda semana. O atendimento de hoje é melhor que o do mês passado, sem você pedir.",
   },
 ];
 
@@ -74,14 +74,12 @@ const Sobre = () => {
               Quem somos
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-primary mb-6 leading-[1.12] select-none">
-              Um ano construindo{" "}
-              <span className="text-gradient-gold">
-                antes de vender o primeiro.
-              </span>
+              Feito para aguentar{" "}
+              <span className="text-gradient-gold">o dia cheio da sua clínica.</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed select-none">
-              Somos a Arenium. Levamos esse tempo porque clínica não é lugar para
-              testar sistema meia-boca.
+              Somos a Arenium. Um time que desenvolve, implanta, monitora e melhora
+              o OdontoAgent todos os dias.
             </p>
           </Reveal>
         </div>
@@ -109,7 +107,7 @@ const Sobre = () => {
       </section>
 
       {/* ORIGEM */}
-      <section className="py-20 lg:py-28 bg-surface-soft">
+      <section className="py-20 lg:py-28 bg-surface-soft section-edge">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 max-w-6xl mx-auto items-center">
             <Reveal className="lg:col-span-2">
@@ -147,14 +145,15 @@ const Sobre = () => {
       </section>
 
       {/* O TIME */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28 bg-mesh-gradient-dark relative overflow-hidden">
+        <div className="absolute top-10 right-0 w-72 h-72 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl mx-auto text-center mb-14">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary mb-5 select-none">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-5 select-none">
               Tem gente por trás{" "}
               <span className="text-gradient-gold">de cada conversa.</span>
             </h2>
-            <p className="text-base text-muted-foreground select-none">
+            <p className="text-base text-white/70 select-none">
               Não é um sistema que roda sozinho e torce para dar certo.
             </p>
           </Reveal>
@@ -162,12 +161,12 @@ const Sobre = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {times.map((time, i) => (
               <Reveal key={time.titulo} delay={i * 0.1}>
-                <SpotlightCard className="h-full rounded-2xl border border-border bg-secondary/40 p-7 flex flex-col">
+                <SpotlightCard dark className="h-full glass-card rounded-2xl p-7 flex flex-col">
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 border border-accent/30 mb-5">
                     <time.icon size={20} className="text-accent" />
                   </span>
 
-                  <h3 className="text-lg font-semibold text-primary mb-4 select-none">
+                  <h3 className="text-lg font-semibold text-white mb-4 select-none">
                     {time.titulo}
                   </h3>
 
@@ -175,19 +174,19 @@ const Sobre = () => {
                     {time.pessoas.map((pessoa) => (
                       <span
                         key={pessoa}
-                        className="inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-white border border-border"
+                        className="inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-white/10 border border-white/20"
                       >
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground select-none">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent text-[11px] font-semibold text-accent-foreground select-none">
                           {pessoa.charAt(0)}
                         </span>
-                        <span className="text-sm font-medium text-primary select-none">
+                        <span className="text-sm font-medium text-white select-none">
                           {pessoa}
                         </span>
                       </span>
                     ))}
                   </div>
 
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed select-none">
+                  <p className="text-sm sm:text-base text-white/70 leading-relaxed select-none">
                     {time.texto}
                   </p>
                 </SpotlightCard>
@@ -196,16 +195,16 @@ const Sobre = () => {
           </div>
 
           <Reveal delay={0.2} className="max-w-3xl mx-auto mt-10 text-center">
-            <p className="text-sm sm:text-base text-muted-foreground select-none">
+            <p className="text-sm sm:text-base text-white/65 select-none">
               Além deles, tem time cuidando de customer success, contratos,
-              jurídico e pós-venda. Sua clínica nunca depende de uma pessoa só.
+              jurídico e pós-venda.
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* JEITO DE TRABALHAR */}
-      <section className="py-20 lg:py-28 bg-surface-soft">
+      <section className="py-20 lg:py-28 bg-section-tint section-edge">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
             <Reveal>
@@ -235,16 +234,18 @@ const Sobre = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28 bg-mesh-gradient-dark relative overflow-hidden">
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-4xl mx-auto">
-            <SpotlightCard className="rounded-3xl border border-border bg-surface-soft px-6 py-14 sm:px-12 text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-5 select-none">
-                Fale com quem{" "}
-                <span className="text-gradient-gold">vai implantar.</span>
+            <SpotlightCard dark className="glass-card rounded-3xl px-6 py-14 sm:px-12 text-center">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-5 select-none">
+                Sua clínica não depende{" "}
+                <span className="text-gradient-gold">de uma pessoa só.</span>
               </h2>
-              <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-10 select-none">
-                Sem intermediário e sem script de call center.
+              <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto mb-10 select-none">
+                Time de implantação, monitoramento e suporte, do primeiro dia em
+                diante.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -261,7 +262,7 @@ const Sobre = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-primary/25 text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 h-12"
+                  className="border-white/30 text-white hover:bg-white hover:text-primary font-semibold px-8 h-12 bg-transparent"
                 >
                   <Link to="/planos">
                     Ver planos

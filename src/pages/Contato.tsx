@@ -70,7 +70,7 @@ const Contato = () => {
   return (
     <Layout>
       {/* Hero with Mesh Gradient */}
-      <section className="py-16 lg:py-24 bg-mesh-gradient relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-hero-champagne grain-texture relative overflow-hidden">
         <div className="absolute top-10 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -94,7 +94,7 @@ const Contato = () => {
       </section>
 
       {/* Form Section */}
-      <section id="formulario" className="py-16 lg:py-24 bg-mesh-gradient scroll-mt-24">
+      <section id="formulario" className="py-16 lg:py-24 bg-surface-soft section-edge scroll-mt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
             {/* Form */}
