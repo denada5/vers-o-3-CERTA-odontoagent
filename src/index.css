@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 190 18% 97%;
+    --background: 190 18% 95%;
     --foreground: 194 22% 15%;
 
-    --card: 0 0% 100%;
+    --card: 190 28% 98%;
     --card-foreground: 194 22% 15%;
 
-    --popover: 0 0% 100%;
+    --popover: 190 28% 98%;
     --popover-foreground: 194 22% 15%;
 
     /* Navy Blue - Primary */
@@ -122,7 +122,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: hsl(190 18% 97%);
+    background-color: hsl(190 18% 95%);
     color: hsl(194 22% 15%);
   }
 
@@ -160,11 +160,23 @@ All colors MUST be HSL.
 
   /* Champagne/Gold Off-White Hero Gradient */
   .bg-hero-champagne {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(160deg, hsl(190 20% 95%) 0%, hsl(188 22% 93%) 55%, hsl(188 26% 91%) 100%);
+  }
+
+  .bg-hero-champagne::before {
+    content: '';
+    position: absolute;
+    inset: -30%;
     background:
-      radial-gradient(ellipse at 22% 12%, hsl(var(--gold) / 0.12) 0px, transparent 48%),
-      radial-gradient(ellipse at 82% 8%, hsl(var(--navy) / 0.10) 0px, transparent 46%),
-      radial-gradient(ellipse at 70% 92%, hsl(var(--navy-light) / 0.10) 0px, transparent 50%),
-      linear-gradient(160deg, hsl(190 20% 98%) 0%, hsl(188 22% 97%) 55%, hsl(188 24% 95%) 100%);
+      radial-gradient(34% 38% at 22% 24%, hsl(var(--gold) / 0.16), transparent 62%),
+      radial-gradient(30% 34% at 78% 68%, hsl(var(--navy) / 0.12), transparent 62%),
+      radial-gradient(28% 30% at 58% 12%, hsl(var(--navy-light) / 0.10), transparent 62%);
+    animation: aurora 46s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: -1;
   }
 
   /* Grain/Noise Texture Overlay */
@@ -403,15 +415,41 @@ All colors MUST be HSL.
 
   /* Faixa clara com tom de petroleo, distinta do branco puro */
   .bg-surface-soft {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: hsl(188 26% 92%);
+  }
+
+  .bg-surface-soft::before {
+    content: '';
+    position: absolute;
+    inset: -30%;
     background:
-      radial-gradient(ellipse at 15% 0%, hsl(var(--navy) / 0.07) 0px, transparent 50%),
-      radial-gradient(ellipse at 90% 100%, hsl(var(--gold) / 0.08) 0px, transparent 45%),
-      hsl(188 26% 94%);
+      radial-gradient(34% 38% at 18% 26%, hsl(var(--navy) / 0.11), transparent 62%),
+      radial-gradient(32% 36% at 84% 74%, hsl(var(--gold) / 0.13), transparent 62%),
+      radial-gradient(28% 30% at 62% 8%, hsl(var(--navy-light) / 0.09), transparent 62%);
+    animation: aurora 58s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes aurora {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(3%, -4%, 0) scale(1.08); }
+    100% { transform: translate3d(-4%, 3%, 0) scale(1.04); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-hero-champagne::before,
+    .bg-surface-soft::before {
+      animation: none;
+    }
   }
 
   /* Faixa media, para separar dois blocos claros seguidos */
   .bg-section-tint {
-    background: hsl(188 20% 93%);
+    background: hsl(188 22% 89%);
   }
 
   /* Borda fina no topo da secao, marca a troca de bloco */
@@ -511,5 +549,12 @@ All colors MUST be HSL.
     .nav-underline::after {
       transition: none;
     }
+  }
+}
+
+@layer utilities {
+  /* Branco puro cansa a vista em area grande. Off-white com tom petroleo. */
+  .bg-white {
+    background-color: hsl(190 28% 97%);
   }
 }
