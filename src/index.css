@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 190 18% 97%;
     --foreground: 194 22% 15%;
 
     --card: 0 0% 100%;
@@ -111,19 +111,18 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  /* FORÇA O LIGHT MODE - ignora preferências do sistema */
-  :root {
-    color-scheme: light only;
-  }
-
-  html {
-    color-scheme: light;
+  /* Forca o modo claro, inclusive contra o escuro forcado do navegador.
+     A palavra only e obrigatoria: sem ela o Chrome inverte as cores. */
+  :root,
+  html,
+  body {
+    color-scheme: only light;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: hsl(0 0% 100%);
+    background-color: hsl(190 18% 97%);
     color: hsl(194 22% 15%);
   }
 
@@ -165,7 +164,7 @@ All colors MUST be HSL.
       radial-gradient(ellipse at 22% 12%, hsl(var(--gold) / 0.12) 0px, transparent 48%),
       radial-gradient(ellipse at 82% 8%, hsl(var(--navy) / 0.10) 0px, transparent 46%),
       radial-gradient(ellipse at 70% 92%, hsl(var(--navy-light) / 0.10) 0px, transparent 50%),
-      linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(188 26% 99%) 55%, hsl(188 24% 97%) 100%);
+      linear-gradient(160deg, hsl(190 20% 98%) 0%, hsl(188 22% 97%) 55%, hsl(188 24% 95%) 100%);
   }
 
   /* Grain/Noise Texture Overlay */
@@ -407,7 +406,7 @@ All colors MUST be HSL.
     background:
       radial-gradient(ellipse at 15% 0%, hsl(var(--navy) / 0.07) 0px, transparent 50%),
       radial-gradient(ellipse at 90% 100%, hsl(var(--gold) / 0.08) 0px, transparent 45%),
-      hsl(188 24% 96%);
+      hsl(188 26% 94%);
   }
 
   /* Faixa media, para separar dois blocos claros seguidos */
